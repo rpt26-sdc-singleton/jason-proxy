@@ -22,3 +22,8 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 README.md
+
+newrelic.js
+
+k6script.js
+

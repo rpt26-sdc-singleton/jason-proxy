@@ -33,3 +33,7 @@ about/
 ## Env variables ##
 .env
 node_modules
+
+newrelic.js
+
+k6script.js
