@@ -1,4 +1,5 @@
 require('newrelic');
+const axios = require('axios');
 
 const express = require('express');
 const path = require('path');
@@ -17,6 +18,18 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 
 app.get('/:id', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+});
+
+//send get request to title service - for sending req directly through proxy for testing
+app.get('/title/:id', (req, res) => {
+  axios.get(`http://localhost:3001/api/getTitle/${req.params.id}`)
+  .then((title) => {
+    // console.log('title', title);
+    res.json(title.data);
+  })
+  .catch((err) => {
+    res.send(err);
+  })
 });
 
 app.listen(PORT, () => {
