@@ -35,3 +35,9 @@ app.get('/title/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Proxy listening at port ${PORT}`);
 });
+
+
+//steps to take on deployed proxy - to be able to directly test service's api from proxy
+//install axios on proxy server
+//require it
+//copy/paste above code for get req for /title/id
